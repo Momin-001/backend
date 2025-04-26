@@ -1,4 +1,3 @@
-import { config } from "dotenv";
 import express from "express";
 import cors from "cors";
 import fileUpload from "express-fileupload";
@@ -11,12 +10,9 @@ import orderRouter from './router/orderRouter.js'
 import tableRouter from './router/tableRouter.js'
 import bookingRouter from './router/bookingRouter.js'
 import waiterRouter from './router/waiterRouter.js'
+require('dotenv').config();
 
 const app = express();
-config({
-  path: "./config/config.env",
-});
-
 app.use(cors()); // Allow all origins temporarily
 
 app.use(express.json());
