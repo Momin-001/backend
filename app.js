@@ -15,7 +15,9 @@ import waiterRouter from './router/waiterRouter.js'
 const app = express();
 config();
 
-app.use(cors()); // Allow all origins temporarily
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
